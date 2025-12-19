@@ -1,91 +1,158 @@
-# 🕹️ Emulador Sinclair ZX81 (Windows • Compilação Manual)
+# 🕹️ Emulador Sinclair ZX81 (Windows • Linha de Comandos)
 
-Este repositório contém o código-fonte completo de um **emulador funcional do ZX81**, escrito em C, com motor de CPU Z80 incluído e interface gráfica em **SDL 1.2**.
+Este repositório contém um emulador do **Sinclair ZX81**, escrito em C, com CPU Z80 incluída e interface gráfica em **SDL 1.2**.
 
----
-
-## 🧰 Pré-requisitos para Windows
-
-Para compilar e correr o emulador no Windows, vais precisar de:
-
-1. **Compilador C** compatível com `gcc`  
-   👉 Recomendado: [MinGW-w64](https://www.mingw-w64.org/)
-2. **Biblioteca SDL 1.2**:  
-   👉 Usa a versão `SDL-devel-1.2.15-...-mingw32.zip` disponível no [site oficial](https://www.libsdl.org/download-1.2.php)
-3. **Make** (opcional, se quiseres usar o `Makefile`)
-4. **Editor de código** (Visual Studio Code, Code::Blocks, etc.)
+O emulador suporta carregar programas **`.P`** (snapshots de RAM do ZX81) a partir da pasta `tapes/`, e regista toda a atividade do “tape loader” no ficheiro `tape_log.txt`.
 
 ---
 
-## 📁 Ficheiros incluídos
+## ✅ O que precisas (Windows)
 
-| Ficheiro       | Descrição                                 |
-|----------------|-------------------------------------------|
-| `zx81.c`       | Código principal do emulador              |
-| `z80.c`/`.h`    | Implementação da CPU Z80                 |
-| `zx81rom.h`    | ROM do ZX81 embutida (array C)            |
-| `Makefile`     | Script de compilação opcional             |
+Para compilar e correr o emulador no Windows, precisas de:
 
----
+1. **MinGW-w64 (gcc)** e **mingw32-make**
+2. **SDL 1.2** (bibliotecas e headers de desenvolvimento)
 
-## 🔧 Compilação (com MinGW)
+### Opção A (recomendada): MSYS2
 
-Assumindo que tens o `gcc` e a SDL 1.2 corretamente instalados:
+1) Instala o MSYS2: https://www.msys2.org/
+
+2) Abre o terminal **“MSYS2 MinGW x64”** e instala as dependências:
 
 ```bash
-gcc zx81.c z80.c -IC:\SDL\include -LC:\SDL\lib -lmingw32 -lSDLmain -lSDL -o zx81.exe
+pacman -S --needed mingw-w64-x86_64-toolchain mingw-w64-x86_64-SDL make
 ```
 
-> ⚠️ **Nota:** Substitui `C:\SDL` pelo caminho onde extraíste os ficheiros de desenvolvimento da SDL.
-
-### Alternativa com `Makefile` (usando MSYS2)
-
-Se tiveres o `make` instalado (ex: com [MSYS2](https://www.msys2.org/)):
+3) Compila a partir da pasta do projeto:
 
 ```bash
-make
+mingw32-make
+```
+
+### Opção B: MinGW-w64 “standalone” + SDL 1.2
+
+Se já tens MinGW-w64 instalado fora do MSYS2, garante que:
+
+- `gcc` e `mingw32-make` estão no `PATH`
+- tens os headers e libs da SDL 1.2 acessíveis
+
+O `Makefile` compila por defeito com:
+
+```text
+-lmingw32 -lSDLmain -lSDL
+```
+
+Se a SDL não estiver no caminho padrão do linker, podes compilar assim (exemplo):
+
+```bash
+mingw32-make SDL_CFLAGS=-IC:\SDL\include SDL_LIBS="-LC:\SDL\lib -lmingw32 -lSDLmain -lSDL"
 ```
 
 ---
 
-## ▶️ Como correr o emulador
+## 🔧 Compilar
 
-Após compilares com sucesso:
+Na pasta do projeto:
+
+```bash
+mingw32-make
+```
+
+Isto gera o executável:
+
+```text
+zx81.exe
+```
+
+---
+
+## ▶️ Correr o emulador (linha de comandos)
+
+Podes arrancar o emulador de duas formas:
+
+### 1) Arrancar “limpo” (sem ficheiro)
 
 ```bash
 zx81.exe
 ```
 
-Deverás ver a clássica tela branca do ZX81 com o cursor `K`.
+Depois, no ecrã do ZX81, escreve o comando de BASIC:
+
+```text
+LOAD "ZORLAC.P"
+```
+
+Nota: o emulador tenta detetar o nome do ficheiro a partir da RAM durante o loop de LOAD.
+
+### 2) Arrancar já a apontar para um `.P`
+
+```bash
+zx81.exe ZORLAC.P
+```
+
+Isto define o nome do ficheiro a carregar logo ao arrancar. A seguir, no ZX81, faz:
+
+```text
+LOAD "ZORLAC.P"
+```
 
 ---
 
-## 🖱️ Controlos
+## 📼 Onde colocar os ficheiros `.P`
 
-- Teclado mapeado para o layout original do ZX81 (via SDL)
-- Usa as teclas: letras, `SHIFT`, `RETURN`, `SPACE`, etc.
-- Sem suporte a som ou ficheiros `.P` (por enquanto).
+O emulador procura o ficheiro nesta ordem:
 
----
+1) na pasta atual (onde está o `zx81.exe`)
+2) na pasta `tapes/` (ex.: `tapes/ZORLAC.P`)
 
-## 🧠 Sobre este projeto
+Exemplos incluídos em `tapes/`:
 
-Este emulador foi criado com foco em:
-
-- **Fidelidade ao comportamento do ZX81 original**
-- Código simples, direto e fácil de expandir
-- Sem dependências externas além da SDL
+- `ZORLAC.P`
+- `GRAFFITY.P`
+- `CLCKFREQ.P`
 
 ---
 
-## 🛠️ Próximos passos
+## 📝 Logs do tape loader
 
-- Suporte a ficheiros `.P` e `SAVE/LOAD`
-- Melhoria na emulação de vídeo
-- Otimizações de desempenho e timing
+Sempre que corres o emulador, ele escreve um log em:
+
+```text
+tape_log.txt
+```
+
+Se um programa “fica branco”, não carrega, ou parece encravar, este ficheiro é a primeira coisa a verificar.
 
 ---
 
-## ❓ Dúvidas ou sugestões?
+## 🖱️ Teclas
 
-Sente-te à vontade para contactar ou contribuir. Boas emulações! 🚀
+- O teclado está mapeado para a matriz do ZX81 (via SDL)
+- Usa letras, `SHIFT`, `RETURN`, `SPACE`, etc.
+
+---
+
+## 🧯 Problemas comuns (Windows)
+
+### “Permission denied” ao compilar
+
+Se `mingw32-make` falhar com `cannot open output file zx81.exe: Permission denied`, é quase sempre o Windows a bloquear o executável porque ele ainda está a correr.
+
+Solução:
+
+1) Fecha a janela do emulador
+2) Volta a compilar
+
+### O emulador corre “rápido demais” / timing
+
+O emulador inclui limitação de velocidade por frame para aproximar o comportamento real do ZX81 (SLOW vs FAST). Se quiseres ajustar o “feeling”, o ponto de entrada para timing está no `zx81.c` (ciclos por frame / modo).
+
+---
+
+## 📁 Estrutura do projeto (resumo)
+
+- `zx81.c` — loop principal, SDL, teclado, vídeo
+- `z80.c` / `z80.h` — core da CPU Z80
+- `zx81_tape.c` / `zx81_tape.h` — loader de `.P`, injeção de RAM e logging
+- `tapes/` — exemplos de programas `.P`
+
