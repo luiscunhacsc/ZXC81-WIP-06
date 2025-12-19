@@ -113,46 +113,32 @@ Exemplos incluídos em `tapes/`:
 
 ---
 
-## 📝 Logs do tape loader
+## 🖱️ Controlos
 
-Sempre que corres o emulador, ele escreve um log em:
-
-```text
-tape_log.txt
-```
-
-Se um programa “fica branco”, não carrega, ou parece encravar, este ficheiro é a primeira coisa a verificar.
+- Teclado mapeado para o layout original do ZX81 (via SDL)
+- Usa as teclas: letras, `SHIFT`, `RETURN`, `SPACE`, etc.
+- Sem suporte a som ou ficheiros `.P` (por enquanto).
 
 ---
 
-## 🖱️ Teclas
+## 🧠 Sobre este projeto
 
-- O teclado está mapeado para a matriz do ZX81 (via SDL)
-- Usa letras, `SHIFT`, `RETURN`, `SPACE`, etc.
+Este emulador foi criado com foco em:
 
----
-
-## 🧯 Problemas comuns (Windows)
-
-### “Permission denied” ao compilar
-
-Se `mingw32-make` falhar com `cannot open output file zx81.exe: Permission denied`, é quase sempre o Windows a bloquear o executável porque ele ainda está a correr.
-
-Solução:
-
-1) Fecha a janela do emulador
-2) Volta a compilar
-
-### O emulador corre “rápido demais” / timing
-
-O emulador inclui limitação de velocidade por frame para aproximar o comportamento real do ZX81 (SLOW vs FAST). Se quiseres ajustar o “feeling”, o ponto de entrada para timing está no `zx81.c` (ciclos por frame / modo).
+- **Fidelidade ao comportamento do ZX81 original**
+- Código simples, direto e fácil de expandir
+- Sem dependências externas além da SDL
 
 ---
 
-## 📁 Estrutura do projeto (resumo)
+## 🛠️ Próximos passos
 
-- `zx81.c` — loop principal, SDL, teclado, vídeo
-- `z80.c` / `z80.h` — core da CPU Z80
-- `zx81_tape.c` / `zx81_tape.h` — loader de `.P`, injeção de RAM e logging
-- `tapes/` — exemplos de programas `.P`
+- Suporte a ficheiros `.P` e `SAVE/LOAD`
+- Melhoria na emulação de vídeo
+- Otimizações de desempenho e timing
 
+---
+
+## ❓ Dúvidas ou sugestões?
+
+Sente-te à vontade para contactar ou contribuir. Boas emulações! 🚀
