@@ -36,19 +36,7 @@ zx81 zorlac.p
 Notas:
 
 - O ficheiro deve estar na pasta `tapes/` (por exemplo `tapes\zorlac.p`).
-- Se o Windows disser que `zx81` não é reconhecido, usa:
 
-	```bash
-	zx81.exe zorlac.p
-	```
-
-4) Com a janela do emulador aberta, pressiona:
-
-- **F12** (força a injeção/carregamento do snapshot)
-
-Depois disso, o emulador tenta iniciar automaticamente o programa (Auto-RUN).
-
----
 
 ## Parte 2 — Compilar com MSYS2 (Windows)
 
