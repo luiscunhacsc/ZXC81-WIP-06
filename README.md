@@ -97,31 +97,19 @@ Este ficheiro é útil para:
 
 - confirmar que o `.P` foi aberto com sucesso
 - confirmar que houve “injeção” para RAM
-- perceber por que motivo um programa não arrancou
+# Emulador Sinclair ZX81 (Windows)
 
----
+O README é dirigido a utilizadores Windows.
 
-### Problemas comuns
+Para correr programas:
 
-### Erro ao compilar: “Permission denied” no `zx81.exe`
+1) Coloca os ficheiros `*.p` na pasta `tapes`.
+2) Abre a **Linha de Comandos (cmd.exe)** (não o PowerShell) na pasta do emulador.
+3) Escreve `zx81` seguido do nome do programa, por exemplo:
 
-Se aparecer algo do género `cannot open output file zx81.exe: Permission denied`, é porque o executável ainda está a correr (o Windows bloqueia o ficheiro).
-
-Solução:
-
-1) Fecha o emulador
+```text
+zx81 zorlac.p
+```
 2) Volta a correr `mingw32-make`
 
-### O emulador fecha logo ao arrancar / não encontra SDL
-
-Normalmente significa que falta a SDL 1.2 no ambiente (DLLs/runtime). Usa MSYS2 (recomendado) ou garante que as DLLs necessárias estão disponíveis.
-
----
-
-### Estrutura do projeto
-
-- `zx81.c` — loop principal (SDL), teclado, vídeo, timing
-- `z80.c` / `z80.h` — core da CPU Z80
-- `zx81_tape.c` / `zx81_tape.h` — loader/injeção de `.P` + logging
-- `tapes/` — exemplos de programas `.P`
 
