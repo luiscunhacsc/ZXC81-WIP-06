@@ -8,27 +8,40 @@ Importante: nesta fase, o carregamento de programas é feito **pela linha de com
 
 ---
 
-## Quickstart (Windows)
+## Parte 1 — Utilizador Windows (rápido)
 
-1) Compilar:
+Se só queres **correr programas** (sem te preocupares com compilação), o fluxo é este:
 
-```bash
-mingw32-make
+1) Copia os ficheiros `.P` para a pasta:
+
+```text
+tapes/
 ```
 
-2) Correr um programa (exemplo):
+2) Abre a linha de comandos na pasta do projeto e corre:
 
 ```bash
-zx81.exe ZORLAC.P
+zx81 ZORLAC.P
 ```
 
-3) Na janela do emulador, carregar o snapshot:
+Notas:
 
-- Pressiona **F12**
+- No Windows, `zx81` normalmente significa `zx81.exe` (podes usar `zx81.exe ZORLAC.P` se preferires).
+- O emulador procura o ficheiro na pasta atual e em `tapes/`.
+
+3) Com a janela do emulador aberta, pressiona:
+
+- **F12** (força a injeção/carregamento do snapshot)
+
+Depois disso, o emulador tenta iniciar automaticamente o programa (Auto-RUN).
 
 ---
 
-## Pré-requisitos (Windows)
+## Parte 2 — Compilação e detalhes (Windows)
+
+---
+
+### Pré-requisitos
 
 Precisas de:
 
@@ -72,7 +85,7 @@ mingw32-make SDL_CFLAGS=-IC:\SDL\include SDL_LIBS="-LC:\SDL\lib -lmingw32 -lSDLm
 
 ---
 
-## Como correr programas `.P`
+### Como correr programas `.P`
 
 ### 1) Colocar o ficheiro
 
@@ -104,7 +117,7 @@ Depois disto, o emulador tenta iniciar automaticamente o programa (Auto-RUN).
 
 ---
 
-## Logs e diagnóstico
+### Logs e diagnóstico
 
 O emulador escreve um log em:
 
@@ -120,7 +133,7 @@ Este ficheiro é útil para:
 
 ---
 
-## Problemas comuns
+### Problemas comuns
 
 ### Erro ao compilar: “Permission denied” no `zx81.exe`
 
@@ -137,7 +150,7 @@ Normalmente significa que falta a SDL 1.2 no ambiente (DLLs/runtime). Usa MSYS2 
 
 ---
 
-## Estrutura do projeto
+### Estrutura do projeto
 
 - `zx81.c` — loop principal (SDL), teclado, vídeo, timing
 - `z80.c` / `z80.h` — core da CPU Z80

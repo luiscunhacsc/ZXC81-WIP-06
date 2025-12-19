@@ -232,3 +232,14 @@
 [17:49:58] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
 [17:49:58] ZX81.C: Injection Success. Requesting Auto-RUN.
 [17:49:58] MAIN: Starting Auto-RUN sequence.
+[18:40:55] --- SESSION START ---
+[18:40:55] SETUP: Filename set to 'zorlac.p'
+[18:40:55] LOAD: Success. 'zorlac.p' (7214 bytes) ready in buffer. E_LINE=5C37 expected_len=7214
+[18:40:55] INJECT: Writing to RAM...
+[18:40:55] INJECT: Post-copy D_FILE=58E1 (mem[400C..400D]=E1 58)
+[18:40:55] INJECT: Post-copy E_LINE=5C37 (mem[4014..4015]=37 5C)
+[18:40:55] INJECT: D_FILE first bytes: 76 00 00 00
+[18:40:55] INJECT: Init CPU state. PC=0207 SP=7FFC IM=2
+[18:40:55] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
+[18:40:55] ZX81.C: CLI autoload successful. Requesting Auto-RUN.
+[18:40:55] MAIN: Starting Auto-RUN sequence.
