@@ -80,7 +80,7 @@ Este emulador foi criado com foco em:
 
 ## 🛠️ Próximos passos
 
-- Suporte a ficheiros `.P` e `SAVE/LOAD`
+- Suporte a gravação de ficheiros `.P` ("SAVE")
 - Melhoria na emulação de vídeo
 - Otimizações de desempenho e timing
 
