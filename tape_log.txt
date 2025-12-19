@@ -1,0 +1,96 @@
+[16:47:56] --- SESSION START ---
+[16:47:56] SETUP: Filename set to 'ZORLAC.P'
+[16:47:56] LOAD: Success. 'ZORLAC.P' (7214 bytes) ready in buffer. E_LINE=5C37 expected_len=7214
+[16:47:56] TRIGGER: CPU at 03CB, Tape Ready. Injecting!
+[16:47:56] INJECT: Writing to RAM...
+[16:47:56] INJECT: Post-copy D_FILE=58E1 (mem[400C..400D]=E1 58)
+[16:47:56] INJECT: Post-copy E_LINE=5C37 (mem[4014..4015]=37 5C)
+[16:47:56] INJECT: D_FILE first bytes: 76 00 00 00
+[16:47:56] INJECT: Init CPU state. PC=0207 SP=7FFC IM=2
+[16:47:56] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
+[16:47:56] ZX81.C: Injection Success. Requesting Auto-RUN.
+[16:47:56] MAIN: Starting Auto-RUN sequence.
+[16:49:04] --- SESSION START ---
+[16:49:04] SETUP: Filename set to 'GRAFFITY.P'
+[16:49:04] LOAD: Success. 'GRAFFITY.P' (7201 bytes) ready in buffer. E_LINE=5C29 expected_len=7200
+[16:49:04] TRIGGER: CPU at 03CB, Tape Ready. Injecting!
+[16:49:04] INJECT: Writing to RAM...
+[16:49:04] INJECT: Post-copy D_FILE=590F (mem[400C..400D]=0F 59)
+[16:49:04] INJECT: Post-copy E_LINE=5C29 (mem[4014..4015]=29 5C)
+[16:49:04] INJECT: D_FILE first bytes: 76 00 00 00
+[16:49:04] INJECT: Init CPU state. PC=0207 SP=7FFC IM=2
+[16:49:04] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
+[16:49:04] ZX81.C: Injection Success. Requesting Auto-RUN.
+[16:49:04] MAIN: Starting Auto-RUN sequence.
+[16:52:37] --- SESSION START ---
+[16:52:37] SETUP: Filename set to 'ZORLAC.P'
+[16:52:37] LOAD: Success. 'ZORLAC.P' (7214 bytes) ready in buffer. E_LINE=5C37 expected_len=7214
+[16:52:37] TRIGGER: CPU at 03CB, Tape Ready. Injecting!
+[16:52:37] INJECT: Writing to RAM...
+[16:52:37] INJECT: Post-copy D_FILE=58E1 (mem[400C..400D]=E1 58)
+[16:52:37] INJECT: Post-copy E_LINE=5C37 (mem[4014..4015]=37 5C)
+[16:52:37] INJECT: D_FILE first bytes: 76 00 00 00
+[16:52:37] INJECT: Init CPU state. PC=0207 SP=7FFC IM=2
+[16:52:37] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
+[16:52:37] ZX81.C: Injection Success. Requesting Auto-RUN.
+[16:52:37] MAIN: Starting Auto-RUN sequence.
+[16:53:44] --- SESSION START ---
+[16:53:44] SETUP: Filename set to 'GRAFFITY.P'
+[16:53:44] LOAD: Success. 'GRAFFITY.P' (7201 bytes) ready in buffer. E_LINE=5C29 expected_len=7200
+[16:53:44] TRIGGER: CPU at 03CB, Tape Ready. Injecting!
+[16:53:44] INJECT: Writing to RAM...
+[16:53:44] INJECT: Post-copy D_FILE=590F (mem[400C..400D]=0F 59)
+[16:53:44] INJECT: Post-copy E_LINE=5C29 (mem[4014..4015]=29 5C)
+[16:53:44] INJECT: D_FILE first bytes: 76 00 00 00
+[16:53:44] INJECT: Init CPU state. PC=0207 SP=7FFC IM=2
+[16:53:44] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
+[16:53:44] ZX81.C: Injection Success. Requesting Auto-RUN.
+[16:53:44] MAIN: Starting Auto-RUN sequence.
+[16:55:18] --- SESSION START ---
+[16:55:18] SETUP: Filename set to 'zorlac.p'
+[16:55:18] LOAD: Success. 'zorlac.p' (7214 bytes) ready in buffer. E_LINE=5C37 expected_len=7214
+[16:55:18] TRIGGER: CPU at 03CB, Tape Ready. Injecting!
+[16:55:18] INJECT: Writing to RAM...
+[16:55:18] INJECT: Post-copy D_FILE=58E1 (mem[400C..400D]=E1 58)
+[16:55:18] INJECT: Post-copy E_LINE=5C37 (mem[4014..4015]=37 5C)
+[16:55:18] INJECT: D_FILE first bytes: 76 00 00 00
+[16:55:18] INJECT: Init CPU state. PC=0207 SP=7FFC IM=2
+[16:55:18] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
+[16:55:18] ZX81.C: Injection Success. Requesting Auto-RUN.
+[16:55:18] MAIN: Starting Auto-RUN sequence.
+[17:00:48] --- SESSION START ---
+[17:00:48] SETUP: Filename set to 'voo.p'
+[17:00:48] LOAD: Success. 'voo.p' (14147 bytes) ready in buffer. E_LINE=774C expected_len=14147
+[17:00:48] TRIGGER: CPU at 03CB, Tape Ready. Injecting!
+[17:00:48] INJECT: Writing to RAM...
+[17:00:48] INJECT: Post-copy D_FILE=71EF (mem[400C..400D]=EF 71)
+[17:00:48] INJECT: Post-copy E_LINE=774C (mem[4014..4015]=4C 77)
+[17:00:48] INJECT: D_FILE first bytes: 76 00 00 00
+[17:00:48] INJECT: Init CPU state. PC=0207 SP=7FFC IM=2
+[17:00:48] INJECT: Sysvars ERR_SP=7FFC RAMTOP=8000 MODE=00 PPC=FFFE
+[17:00:48] ZX81.C: Injection Success. Requesting Auto-RUN.
+[17:00:48] MAIN: Starting Auto-RUN sequence.
+[17:03:18] --- SESSION START ---
+[17:03:18] LOAD: No filename defined.
+[17:03:18] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:18] AUTOLOAD: No filename found in RAM yet.
+[17:03:18] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:18] AUTOLOAD: No filename found in RAM yet.
+[17:03:18] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:18] AUTOLOAD: No filename found in RAM yet.
+[17:03:18] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:18] AUTOLOAD: No filename found in RAM yet.
+[17:03:19] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:19] AUTOLOAD: No filename found in RAM yet.
+[17:03:19] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:19] AUTOLOAD: No filename found in RAM yet.
+[17:03:19] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:19] AUTOLOAD: No filename found in RAM yet.
+[17:03:19] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:19] AUTOLOAD: No filename found in RAM yet.
+[17:03:20] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:20] AUTOLOAD: No filename found in RAM yet.
+[17:03:20] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:20] AUTOLOAD: No filename found in RAM yet.
+[17:03:20] DETECT: CPU waiting for tape, but buffer empty. Attempting Autoload...
+[17:03:20] AUTOLOAD: No filename found in RAM yet.
