@@ -10,7 +10,9 @@ Importante: nesta fase, o carregamento de programas é feito **pela linha de com
 
 ## Parte 1 — Utilizador Windows (rápido)
 
-Se só queres **correr programas** (sem te preocupares com compilação), o fluxo é este:
+Se só queres **correr programas** (sem te preocupares com compilação), o fluxo é este.
+
+Esta secção assume que estás a usar a **Linha de Comandos do Windows (cmd.exe)** (não PowerShell).
 
 1) Copia os ficheiros `.P` para a pasta:
 
@@ -18,18 +20,29 @@ Se só queres **correr programas** (sem te preocupares com compilação), o flux
 tapes/
 ```
 
-2) Abre a linha de comandos na pasta do projeto e corre:
+2) Abre a **Linha de Comandos (cmd)** na pasta do emulador.
+
+Formas simples:
+
+- No Explorador do Windows, abre a pasta do emulador e escreve `cmd` na barra de endereço, depois carrega Enter.
+- Ou abre o “Prompt de Comando” e faz `cd` até à pasta do emulador.
+
+3) Executa o emulador com o nome do programa (exemplo):
 
 ```bash
-zx81 ZORLAC.P
+zx81 zorlac.p
 ```
 
 Notas:
 
-- No Windows, `zx81` normalmente significa `zx81.exe` (podes usar `zx81.exe ZORLAC.P` se preferires).
-- O emulador procura o ficheiro na pasta atual e em `tapes/`.
+- O ficheiro deve estar na pasta `tapes/` (por exemplo `tapes\zorlac.p`).
+- Se o Windows disser que `zx81` não é reconhecido, usa:
 
-3) Com a janela do emulador aberta, pressiona:
+	```bash
+	zx81.exe zorlac.p
+	```
+
+4) Com a janela do emulador aberta, pressiona:
 
 - **F12** (força a injeção/carregamento do snapshot)
 
@@ -37,22 +50,11 @@ Depois disso, o emulador tenta iniciar automaticamente o programa (Auto-RUN).
 
 ---
 
-## Parte 2 — Compilação e detalhes (Windows)
-
----
-
-### Pré-requisitos
-
-Precisas de:
-
-- **MinGW-w64 (gcc)** + **mingw32-make**
-- **SDL 1.2** (headers + libs)
-
-### Opção A (recomendada): MSYS2
+## Parte 2 — Compilar com MSYS2 (Windows)
 
 1) Instala o MSYS2: https://www.msys2.org/
 
-2) Abre o terminal **“MSYS2 MinGW x64”** e instala:
+2) Abre o terminal **“MSYS2 MinGW x64”** e instala as dependências:
 
 ```bash
 pacman -S --needed mingw-w64-x86_64-toolchain mingw-w64-x86_64-SDL make
@@ -60,60 +62,26 @@ pacman -S --needed mingw-w64-x86_64-toolchain mingw-w64-x86_64-SDL make
 
 3) Na pasta do projeto:
 
+Exemplo de caminho (ajusta ao teu):
+
+```bash
+cd /e/zx81emu/ZXC81-WIP-06
+```
+
+Compilar:
+
 ```bash
 mingw32-make
 ```
 
-### Opção B: MinGW-w64 “standalone” + SDL 1.2
+4) Para correr depois de compilar:
 
-Se já tens MinGW-w64 fora do MSYS2, garante que:
-
-- `gcc` e `mingw32-make` estão no `PATH`
-- a SDL 1.2 está disponível para o compilador/linker
-
-O `Makefile` usa por defeito:
-
-```text
--lmingw32 -lSDLmain -lSDL
-```
-
-Se precisares de indicar caminhos manualmente:
+- Podes correr a partir do **cmd.exe** (ver Parte 1), ou a partir do próprio terminal do MSYS2.
+- Exemplo (MSYS2):
 
 ```bash
-mingw32-make SDL_CFLAGS=-IC:\SDL\include SDL_LIBS="-LC:\SDL\lib -lmingw32 -lSDLmain -lSDL"
+./zx81.exe zorlac.p
 ```
-
----
-
-### Como correr programas `.P`
-
-### 1) Colocar o ficheiro
-
-Podes colocar o `.P` em qualquer um destes locais:
-
-1) na pasta atual (onde está o `zx81.exe`)
-2) na pasta `tapes/` (ex.: `tapes/ZORLAC.P`)
-
-### 2) Arrancar o emulador com o nome do ficheiro
-
-Exemplo:
-
-```bash
-zx81.exe ZORLAC.P
-```
-
-Notas:
-
-- O nome pode estar em minúsculas (ex.: `zorlac.p`) — no Windows costuma funcionar.
-- Se o ficheiro não existir, consulta o `tape_log.txt` para veres exatamente onde o emulador procurou.
-
-### 3) Forçar o carregamento (injeção)
-
-Com o emulador aberto, pressiona:
-
-- **F12** — força o carregamento/injeção do snapshot atualmente selecionado
-
-Depois disto, o emulador tenta iniciar automaticamente o programa (Auto-RUN).
 
 ---
 
