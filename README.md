@@ -64,7 +64,6 @@ Deverás ver a clássica tela branca do ZX81 com o cursor `K`.
 
 - Teclado mapeado para o layout original do ZX81 (via SDL)
 - Usa as teclas: letras, `SHIFT`, `RETURN`, `SPACE`, etc.
-- Sem suporte a som ou ficheiros `.P` (por enquanto).
 
 ---
 
