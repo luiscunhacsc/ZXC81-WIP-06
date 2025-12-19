@@ -4,7 +4,7 @@ Emulador do **Sinclair ZX81**, escrito em C, com CPU Z80 incluída e interface g
 
 Esta versão carrega programas **`.P`** (snapshots de memória do ZX81) a partir da pasta `tapes/` (ou da pasta atual) e regista o processo de carregamento no ficheiro `tape_log.txt`.
 
-Importante: nesta fase, o carregamento de programas é feito **pela linha de comandos** (argumento ao arrancar) e **tecla F12** para forçar a injeção. O comando `LOAD "..."` no BASIC do ZX81 **não é o fluxo suportado**.
+Importante: nesta fase, o carregamento de programas é feito **pela linha de comandos** (argumento ao arrancar). O comando `LOAD "..."` no BASIC do ZX81 **não é o fluxo suportado**.
 
 ---
 
