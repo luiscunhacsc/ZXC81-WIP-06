@@ -4,6 +4,8 @@ Este repositório contém um emulador do **Sinclair ZX81**, escrito em C, com CP
 
 O emulador suporta carregar programas **`.P`** (snapshots de RAM do ZX81) a partir da pasta `tapes/`, e regista toda a atividade do “tape loader” no ficheiro `tape_log.txt`.
 
+Neste momento, o fluxo suportado é **carregar o programa via linha de comandos** (argumento do executável). O comando `LOAD "..."` dentro do BASIC do ZX81 **não é o método suportado** nesta versão.
+
 ---
 
 ## ✅ O que precisas (Windows)
@@ -68,33 +70,26 @@ zx81.exe
 
 ## ▶️ Correr o emulador (linha de comandos)
 
-Podes arrancar o emulador de duas formas:
+### 1) Carregar um `.P` diretamente (recomendado)
 
-### 1) Arrancar “limpo” (sem ficheiro)
-
-```bash
-zx81.exe
-```
-
-Depois, no ecrã do ZX81, escreve o comando de BASIC:
-
-```text
-LOAD "ZORLAC.P"
-```
-
-Nota: o emulador tenta detetar o nome do ficheiro a partir da RAM durante o loop de LOAD.
-
-### 2) Arrancar já a apontar para um `.P`
+Na pasta do projeto (onde está o `zx81.exe`):
 
 ```bash
 zx81.exe ZORLAC.P
 ```
 
-Isto define o nome do ficheiro a carregar logo ao arrancar. A seguir, no ZX81, faz:
+O emulador vai abrir a janela e preparar o ficheiro para injeção.
 
-```text
-LOAD "ZORLAC.P"
-```
+Para carregar imediatamente o snapshot para RAM, usa:
+
+- **`F12`** (força o carregamento/injeção do programa)
+
+Depois do carregamento, o emulador tenta iniciar automaticamente o programa (Auto-RUN).
+
+### 2) Notas importantes
+
+- Se deres o nome do ficheiro em minúsculas (ex.: `zorlac.p`) também deve funcionar no Windows.
+- Se executares `zx81.exe` sem argumentos, o `F12` tenta usar `PROGRAM.P` (se existir). Em geral, é mais simples passar sempre o nome do `.P` na linha de comandos.
 
 ---
 
@@ -117,7 +112,7 @@ Exemplos incluídos em `tapes/`:
 
 - Teclado mapeado para o layout original do ZX81 (via SDL)
 - Usa as teclas: letras, `SHIFT`, `RETURN`, `SPACE`, etc.
-- Sem suporte a som ou ficheiros `.P` (por enquanto).
+- O carregamento de `.P` nesta versão é feito via **linha de comandos + F12** (ver secção acima).
 
 ---
 
@@ -133,7 +128,7 @@ Este emulador foi criado com foco em:
 
 ## 🛠️ Próximos passos
 
-- Suporte a ficheiros `.P` e `SAVE/LOAD`
+- Melhorar o fluxo de carregamento via `LOAD` (BASIC)
 - Melhoria na emulação de vídeo
 - Otimizações de desempenho e timing
 
