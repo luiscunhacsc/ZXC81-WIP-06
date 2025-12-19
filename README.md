@@ -85,19 +85,4 @@ Este ficheiro é útil para:
 
 - confirmar que o `.P` foi aberto com sucesso
 - confirmar que houve “injeção” para RAM
-# Emulador Sinclair ZX81 (Windows)
-
-O README é dirigido a utilizadores Windows.
-
-Para correr programas:
-
-1) Coloca os ficheiros `*.p` na pasta `tapes`.
-2) Abre a **Linha de Comandos (cmd.exe)** (não o PowerShell) na pasta do emulador.
-3) Escreve `zx81` seguido do nome do programa, por exemplo:
-
-```text
-zx81 zorlac.p
-```
-2) Volta a correr `mingw32-make`
-
 
