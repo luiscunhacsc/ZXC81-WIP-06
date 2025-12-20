@@ -1,3 +1,7 @@
+/* Z80.c CPU emulator */
+/* Copyright (c) 2019 Nicolas Allemand - MIT License */
+
+
 #include "z80.h"
 #include <stdbool.h>
 #include <stdio.h>
