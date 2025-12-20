@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------
    zx81.c – Emulador Sinclair ZX-81 (SDL-1.2)
-   Versão Final: Injeção Estável + Auto-RUN (R, U, N, Enter)
+   Versão Final: Injeção Estável + Auto-RUN
    ------------------------------------------------------------------ */
 
 #include <stdio.h>
