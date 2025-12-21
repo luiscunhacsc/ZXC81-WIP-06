@@ -27,16 +27,18 @@ Formas simples:
 - No Explorador do Windows, abre a pasta do emulador e escreve `cmd` na barra de endereço, depois carrega Enter.
 - Ou abre o “Prompt de Comando” e faz `cd` até à pasta do emulador.
 
-Se preferires usar o PowerShell, vai para pasta onde está o ficheiro zx81.exe e faz (por exemplo, para carregar o simulador de voo):
-
-./zx81.exe flight.p
-
-
 3) Executa o emulador com o nome do programa (exemplo):
 
 ```bash
 zx81 zorlac.p
 ```
+
+Se preferires usar o PowerShell, vai para pasta onde está o ficheiro zx81.exe e faz (por exemplo, para carregar o simulador de voo):
+
+```bash
+./zx81.exe flight.p
+```
+
 
 Notas:
 
